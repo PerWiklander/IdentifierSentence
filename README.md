@@ -1,8 +1,8 @@
 # IdentifierSentence: Create unique, memorable ids in Java
 
-`IdentifierSentence` is a simple lib to let you generate (probably) unique, memorable ids in Java applications.
+`IdentifierSentence` is a simple tool to let you generate (probably) unique, memorable ids in Java applications.
 
-It creates sentences on the form count + adjective + noun + verb + adverb, as described in [this Asana blog post](http://asana.com/2011/09/6-sad-squid-snuggle-softly/ "6 sad squids snuggle softly") by Greg Slovacek, whom this module is named after.
+It creates sentences on the form count + adjective + noun + verb + adverb, as described in [this Asana blog post](http://asana.com/2011/09/6-sad-squid-snuggle-softly/ "6 sad squids snuggle softly") by Greg Slovacek, whom this tool is named after.
 
 Linus G Thiel wrote a [Node.js implementation](https://github.com/linus/greg) that I based my work on.
 
@@ -16,9 +16,9 @@ Pull requests are welcome.
 
 ## Installation
 
-Via local maven repos:
+Via local maven repo:
 
-    $ clone git@github.com:PerWiklander/IdentifierSentence.git
+    $ git clone git@github.com:PerWiklander/IdentifierSentence.git
     $ cd IdentifierSentence && mvn install
 
 Not released into Maven central yet.
@@ -26,16 +26,12 @@ Not released into Maven central yet.
 ## Usage
 
     // Generate a random identifier
-    IdentifierSentence sentence = new IdentifierSentence();
-
-    // Create a sentence from a given identifier
-    int identifier = 4711;
-    sentence = new IdentifierSentence(identifier);
-
-    System.out(
+    String randomSentence = IdentifierSentence.random();
+    
+    System.out.println(
       String.format(
         "The sentence \"%s\" corresponds to the id %d",
-        sentence, IdentifierSentence.parse(sentence)
+        randomSentence, IdentifierSentence.parse(randomSentence)
       )
     );
 
