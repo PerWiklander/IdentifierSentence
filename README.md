@@ -42,6 +42,7 @@ Per Wiklander &lt;per@wiklanderconsulting.se&gt;
 ## Thank you
 
 Greg Slovacek
+
 Linus G Thiel &lt;linus@hanssonlarsson.se&gt;
 
 ## License 
