@@ -1,12 +1,11 @@
 package biz.wiklander.tools;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class IdentifierSentenceTest {
-
     @Before
     public void setUp() throws Exception {
     }
@@ -14,22 +13,20 @@ public class IdentifierSentenceTest {
     @Test
     public final void testParse() {
         String knownSentence = "8 mad orcs stomp loudly";
-        int id = IdentifierSentence.parse(knownSentence);
+        long id = IdentifierSentence.parseSentence(knownSentence);
 
-        Assert.assertEquals(id, 23569896);
+        Assert.assertEquals(id, 2271002600L);
     }
 
     @Test
     public final void testRandomSentence() {
-        String randomSentence = IdentifierSentence.random();
+      String randomSentence = IdentifierSentence.random();
 
-        Assert.assertNotSame(randomSentence, "");
+      Assert.assertNotSame(randomSentence, "");
 
-        System.out.println(
-          String.format(
-            "The sentence \"%s\" corresponds to the id %d",
-            randomSentence, IdentifierSentence.parse(randomSentence)
-          )
-        );
+      System.out.printf(
+        "The sentence \"%s\" corresponds to the id %d%n",
+        randomSentence, IdentifierSentence.parseSentence(randomSentence)
+      );
     }
 }
